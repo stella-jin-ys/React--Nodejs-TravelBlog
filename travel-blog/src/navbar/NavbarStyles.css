@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family:'Courier New', Courier, monospace
+}
+.navbar {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+}
+.nav-menu {
+    display: flex;
+}
+.nav-menu li{
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+}
