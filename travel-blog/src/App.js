@@ -1,14 +1,11 @@
-import './App.css';
 import React from 'react';
-import Header from './Header';
-import Navbar from './navbar/Navbar';
-import Hero from './hero/Hero'
+import Hero from './hero/Hero';
+import Navbar from './navbar/Navbar'
 
 function App() {
-
   return (
     <div className="App">
-      <Navbar/> 
+      <Navbar />
       <Hero />
     </div>
   );
