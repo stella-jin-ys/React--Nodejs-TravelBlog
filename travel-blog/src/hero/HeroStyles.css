@@ -1,5 +1,3 @@
-
-
 .hero{
     height: 100vh;
     width: 100%;
@@ -11,4 +9,37 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.content{
+    position: absolute;
+    top: 0;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    padding: 1rem 0;
+}
+.content h1, h2{
+    padding-bottom: 1rem;
+}
+.form{
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    background-color: rgb(251, 251, 251);
+    justify-content: space-between;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+}
+.form input{
+    border-style: none;
+}
+.form button{
+    border-style: none;
+    background-color: white;
 }
