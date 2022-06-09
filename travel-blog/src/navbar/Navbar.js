@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import {BackpackOutlined,  PersonOutline, KeyboardArrowDown, Menu, Clear, Facebook, Instagram, Twitter, GitHub} from '@mui/icons-material';
-import './NavbarStyles.css'
+import './navbar.css'
 
 function Navbar() {
     const [nav, setNav]=useState(false)
@@ -15,12 +16,12 @@ function Navbar() {
         </div>
     
         <ul className='nav-menu'>
-            <li>About</li>
-            <li>Blogs</li>
-            <li>Community</li>
-            <li>Contact</li>
+            <li><Link to='/' className='link'>Home</Link></li>
+            <li><Link to='/blogs' className='link'>Blogs</Link></li>
+            <li><Link to='/community' className='link'>Commnunity</Link></li>
+            <li><Link to='/contact' className='link'>Login</Link></li>
         </ul>
-        <div className='nav-icon'>
+        <div className='nav-icon'> 
             <PersonOutline />
             <KeyboardArrowDown />
         </div>
@@ -30,10 +31,10 @@ function Navbar() {
         </div>
         <div className={nav ? 'mobile-nav active' : 'mobile-nav'}>
             <ul className='mobile-menu'>
-                <li>About</li>
-                <li>Blogs</li>
-                <li>Community</li>
-                <li>Contact</li>
+            <li><Link to='/' className='link'> Home</Link></li>
+            <li><Link to='/blogs' className='link'>Destinations</Link></li>
+            <li><Link to='/community' className='link'>Blogs</Link></li>
+            <li><Link to='/contact' className='link'>Community</Link></li>
             </ul>
             <div className='mobile-menu-bottom'>
                 <div className='mobile-btn'>

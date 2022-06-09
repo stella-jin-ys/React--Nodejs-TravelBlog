@@ -1,6 +1,6 @@
 import React from 'react';
 import video from '../assets/video.mp4';
-import './HeroStyles.css';
+import './hero.css';
 import {Search} from '@mui/icons-material'
 
 function Hero() {
