@@ -1,0 +1,28 @@
+.header{
+    color: white;
+    text-align: center;
+    background-color:  rgb(92, 156, 151);
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+.posts{
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    text-align: center;
+    color: rgb(82, 85, 88);
+    font-size: 15px;
+}
+.blog img{
+    width: 20rem;
+    height: 15rem;
+    border-radius: 10px;
+}
+.blog p{
+    max-width: 20rem;
+    max-height: 25rem;
+    overflow: hidden;
+}

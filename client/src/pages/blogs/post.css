@@ -1,0 +1,25 @@
+.post img{
+    width: 20rem;
+    height: 15rem;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.post h3{
+    max-width: 20rem;
+    color: rgb(231, 148, 148);
+    text-align: center;
+    padding: 1rem;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(92, 156, 151);
+}
+.post p{
+    max-width: 20rem;
+    max-height: 25rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}

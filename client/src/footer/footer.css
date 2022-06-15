@@ -1,0 +1,40 @@
+.footer{
+    background-color: rgb(108, 111, 111);
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.icon{
+    padding: 0 2px;
+}
+.bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.bottom ul{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+.bottom li{
+    padding: 5px;
+}
+@media screen and (max-width:1140px) {
+    .bottom{
+        justify-content: space-around;
+    }
+    .bottom ul{
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    }
+}
+
+
