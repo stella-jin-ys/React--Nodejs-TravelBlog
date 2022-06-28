@@ -5,9 +5,9 @@ import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import Blogs from './pages/blogs/Blogs';
 import NewPost from './pages/blogs/NewPost';
-import NotFound from './pages/noPage/NotFound';
-import Settings from './pages/settings/Settings';
-import Destinations from './pages/destinations/Destinations'
+import PageNotFound from './pages/pageNotFound/PageNotFound';
+import Destinations from './pages/destinations/Destinations';
+import SinglePost from './pages/blogs/SinglePost';
 
 function App() {
   const user = false
@@ -19,11 +19,11 @@ function App() {
         <Route path='/login' element={user ? <Homepage/> : <Login/>} />
         <Route path='/register' element={user ? <Homepage/> : <Register/>}
          />
-         <Route path='/settings' element={user ? <Settings /> : <Login/>}/>
-        <Route path='/blogs' element={<Blogs/>}/>
-        <Route path='/blogs/newpost' element={<NewPost />} />
+          <Route path='/blogs' element={<Blogs />} />
+          <Route path='/blogs/:id' element={<SinglePost />} />
+          <Route path='/blogs/newpost' element={<NewPost />} />
         <Route path='/destinations' element={<Destinations/>}/>
-        <Route path='' element={<NotFound/>}/>
+        <Route path='*' element={<PageNotFound/>}/>
          </>
       </Routes>
     </BrowserRouter>

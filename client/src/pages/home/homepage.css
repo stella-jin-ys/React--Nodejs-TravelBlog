@@ -48,27 +48,13 @@
     margin-bottom: 20px;
 }
 .posts{
-    width: 100%;
-    padding: 20px 0;
+    padding: 10px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 4rem;
-    text-align: center;
     color: rgb(82, 85, 88);
     font-size: 15px;
+    text-align: center;
 }
-.blog img{
-    width: 20rem;
-    height: 15rem;
-    border-radius: 10px;
-}
-.blog p{
-    max-width: 20rem;
-    max-height: 25rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-}
+

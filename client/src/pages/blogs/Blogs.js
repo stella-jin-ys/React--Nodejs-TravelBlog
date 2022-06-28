@@ -1,44 +1,36 @@
-import React,{useState, useEffect} from 'react';
-import PostList from './PostList';
-function Blogs() {
-  const [loading, setLoading] = useState(true);
-  const [posts, setPosts] = useState([]);
+import React from "react";
+import { Link } from "react-router-dom";
+import Hamburger from "../../navbar/Hamburger";
+import PostList from "./PostList";
+import "./blogs.css";
+import { PostsApi } from "../../dataProvider/PostsProvider";
 
-  useEffect(() => {
-    setLoading(true)
-    fetch('https://travel-blog-a7715-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
-    .then((res)=>{
-      return res.json();
-    })
-    .then((data)=>{
-      let postsData = [];
-      for (const key in data){
-        const item = {
-          id:key,
-          ...data[key]
-        }
-        // console.log(item);
-        postsData.push(item)
-        };
-      ;
-      setLoading(false);
-      setPosts(postsData)
-    })
-  },[])
-
-  if(loading){
-    return (
-      <section>
-        <p>Is loading</p>
-      </section>
-    )
-  }
+export default function Blogs() {
+  const { posts } = PostsApi();
 
   return (
     <div>
-      <PostList posts={posts} />
-    </div>
-  )
-}
+      <div className="blog-header">
+        <Hamburger />
+        <h1>Blogs</h1>
+        <p>Share your travel story with us!</p>
+      </div>
 
-export default Blogs
+      <Link to="/blogs/newpost">
+        <button className="post-btn">New post</button>
+      </Link>
+
+      <ul className="posts">
+        {posts.map((post) => (
+          <PostList
+            key={post.id}
+            id={post.id}
+            image={post.image}
+            title={post.title}
+            desc={post.desc}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+}

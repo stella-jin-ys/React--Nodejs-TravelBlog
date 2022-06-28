@@ -18,14 +18,13 @@ function Navbar() {
         <ul className='nav-menu'>
             <li><Link to='/' className='link'>Home</Link></li>
             <li><Link to='/destinations' className='link'>Destinations</Link></li>
-            <li><Link to='/resources' className='link'>Resources</Link></li>
             <li><Link to='/blogs' className='link'>Blogs</Link></li>
         </ul>
         <div className='nav-icon'> 
             <PersonOutline />
             <KeyboardArrowDown />
         </div>
-       
+
         <div className='hamburger' onClick={handleClick}>
             {nav ? <Clear /> : <Menu  />}
         </div>
@@ -33,7 +32,6 @@ function Navbar() {
             <ul className='mobile-menu'>
             <li><Link to='/' className='link'> Home</Link></li>
             <li><Link to='/destinations' className='link'>Destinations</Link></li>
-            <li><Link to='/resources' className='link'>Resources</Link></li>
             <li><Link to='/blogs' className='link'>Blogs</Link></li>
             </ul>
             <div className='mobile-menu-bottom'>

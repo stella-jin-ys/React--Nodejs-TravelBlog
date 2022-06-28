@@ -1,0 +1,23 @@
+.singlePost {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.single-top {
+  border: 1px solid rgb(92, 156, 151);
+}
+.single-top img {
+  height: 30rem;
+  object-fit: cover;
+}
+.single-top h3 {
+  color: rgb(231, 148, 148);
+  padding: 5px;
+  margin: 10px;
+  text-align: center;
+}
+.post-icon:first-child {
+  color: red;
+  background-color: red;
+}

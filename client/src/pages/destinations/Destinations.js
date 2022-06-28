@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from 'react';
+import Hamburger from '../../navbar/Hamburger';
 import './destinations.css'
 
 
@@ -36,6 +37,7 @@ function Destinations() {
 
   return (
     <div className='destinations'>
+      <Hamburger/>
       <div className='desti-header'>
         <h2>Destinations</h2>
         <h4>Luxury vacation or backpack trip </h4>

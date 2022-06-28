@@ -1,0 +1,16 @@
+.resource{
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 40px;
+}
+.resource-header{
+    color: white;
+    text-align: center;
+    background-color:  rgb(92, 156, 151);
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+.resource-content h3{
+    text-align: center;
+
+}

@@ -1,4 +1,5 @@
 import React,{useRef} from 'react';
+import Hamburger from '../../navbar/Hamburger';
 import './newPostForm.css'
 
 function NewPostForm(props) {
@@ -21,7 +22,10 @@ function NewPostForm(props) {
     }
 
   return (
+      <div>
+          <Hamburger/>
         <form className='container' onSubmit={submitHandler}>
+            
             <h2>New Post</h2>
             <div className='image'>
                 <label htmlFor="image">Post Image</label>
@@ -39,7 +43,7 @@ function NewPostForm(props) {
                 <button className='submit-btn' onClick={submitHandler}>New Post</button>
             
         </form>
-  
+        </div>
   )
 }
 
