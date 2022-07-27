@@ -1,10 +1,11 @@
 import React from "react";
 import "./singlePost.css";
 import { RateReview, DeleteOutline } from "@mui/icons-material";
+import Hamburger from "../../navbar/Hamburger";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-export default function SinglePost(props) {
+export default function SinglePost() {
   const [loading, setLoading] = useState(false);
   const [post, setPost] = useState({});
   const { id } = useParams();
@@ -23,17 +24,20 @@ export default function SinglePost(props) {
       });
   }, [id]);
   return (
-    <div className="singlePost">
-      <div className="single-top">
-        <img src={post.image} alt="" />
-        <h3>{post.title}</h3>
-      </div>
-      <div className="post-icon">
-        <RateReview />
-        <DeleteOutline />
-      </div>
-      <div>
-        <p>{post.desc}</p>
+    <div>
+      <Hamburger />
+      <div className="singlePost">
+        <div className="single-top">
+          <img src={post.image} alt="" />
+          <h3>{post.title}</h3>
+        </div>
+        <div className="post-icon">
+          <RateReview />
+          <DeleteOutline />
+        </div>
+        <div>
+          <p>{post.desc}</p>
+        </div>
       </div>
     </div>
   );
