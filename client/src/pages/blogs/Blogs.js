@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Hamburger from "../../navbar/Hamburger";
 import PostList from "./PostList";
 import "./blogs.css";
-import { PostsApi } from "../../dataProvider/PostsProvider";
+import { PostsApi } from "../../contexts/PostsProvider";
 
 export default function Blogs() {
   const { posts } = PostsApi();

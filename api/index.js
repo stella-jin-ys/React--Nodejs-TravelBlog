@@ -11,36 +11,18 @@ const multer = require("multer");
 const port = 8000;
 
 dotenv.config();
-app.use(cors());
+
+mongoose.connect(process.env.MONGO_URL, () =>
+  console.log("Database connected")
+);
+
 app.use(express.json());
+app.use(cors());
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
-// mongoose
-//   .connect(process.env.MONGO_URL)
-//   .then(console.log("Connected to MongoDB"))
-//   .catch((err) => console.log(err));
 
-mongoose.connect(process.env.MONGO_URL);
-mongoose.connection.on(`connected`, () => {
-  // the string "connected" 👆☝ has to be "connected" nothing more nothing less
-  console.log(`mongo connected Successfully!!`);
-  app.listen(port, () => {
-    console.table(listEndpoints(app));
-    console.log(`server running on: ${port}`);
-  });
+app.listen(port, () => {
+  console.log(`server running on: ${port}`);
 });
-
-mongoose.connection.on(`error`, (err) => {
-  console.log(`Mongo Error: ${err}`);
-});
-
-// app.use(
-//     cors({
-//         origin:'*'
-//     }))
-
-// app.listen("8000", () => {
-//   console.log("Backend is running");
-// });

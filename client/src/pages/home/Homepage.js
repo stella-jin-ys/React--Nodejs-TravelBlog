@@ -4,8 +4,8 @@ import Hero from "../../hero/Hero";
 import Navbar from "../../navbar/Navbar";
 import Footer from "../../footer/Footer";
 import PostList from "../blogs/PostList";
-import { DestinationApi } from "../../dataProvider/DestinationProvider";
-import { PostsApi } from "../../dataProvider/PostsProvider";
+import { DestinationApi } from "../../contexts/DestinationProvider";
+import { PostsApi } from "../../contexts/PostsProvider";
 import "./homepage.css";
 
 function Homepage() {
@@ -29,25 +29,24 @@ function Homepage() {
       </div>
 
       {/* Blogs */}
-      <div >
+      <div>
         <Link to="/blogs" className="link">
           <div className="blog-header">
             <h2>Blogs </h2>
           </div>
         </Link>
-        
-          <ul className="posts">
-            {posts.map((post) => (
-              <PostList
-                id={post.id}
-                key={post.id}
-                image={post.image}
-                title={post.title}
-                desc={post.desc}
-              />
-            ))}
-          </ul>
-        
+
+        <ul className="posts">
+          {posts.map((post) => (
+            <PostList
+              id={post.id}
+              key={post.id}
+              image={post.image}
+              title={post.title}
+              desc={post.desc}
+            />
+          ))}
+        </ul>
       </div>
       <Footer />
     </div>
