@@ -1,9 +1,8 @@
 import React, { useRef, useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Hamburger from "../../navbar/Hamburger";
 import "./register.css";
 import axios from "axios";
-import { RateReviewTwoTone } from "@mui/icons-material";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -13,7 +12,7 @@ export default function Register() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  async function handleRegister(e) {
+  const handleRegister = async (e) => {
     e.preventDefault();
     setError(false);
 
@@ -33,7 +32,7 @@ export default function Register() {
       setError(true);
     }
     setLoading(false);
-  }
+  };
   return (
     <div>
       <Hamburger />
