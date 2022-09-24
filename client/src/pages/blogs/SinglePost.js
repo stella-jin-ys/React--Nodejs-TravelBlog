@@ -24,21 +24,27 @@ export default function SinglePost() {
       });
   }, [id]);
   return (
-    <div>
-      <Hamburger />
-      <div className="singlePost">
-        <div className="single-top">
-          <img src={post.image} alt="" />
-          <h3>{post.title}</h3>
-        </div>
-        <div className="post-icon">
-          <RateReview />
-          <DeleteOutline />
-        </div>
+    <>
+      {loading ? (
+        "Loading"
+      ) : (
         <div>
-          <p>{post.desc}</p>
+          <Hamburger />
+          <div className="singlePost">
+            <div className="single-top">
+              <img src={post.image} alt="" />
+              <h3>{post.title}</h3>
+            </div>
+            <div className="post-icon">
+              <RateReview />
+              <DeleteOutline />
+            </div>
+            <div>
+              <p>{post.desc}</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }

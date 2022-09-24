@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./login.css";
 import React, { useContext, useState } from "react";
 import axios from "axios";
@@ -8,6 +8,7 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { dispatch, isFetching } = useContext(Context);
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ export default function Login() {
         password: password,
       });
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+      res.data && navigate("/");
     } catch (error) {
       dispatch({ type: "LOGIN_FAILURE" });
     }

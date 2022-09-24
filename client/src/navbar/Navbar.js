@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   BackpackOutlined,
@@ -12,12 +12,20 @@ import {
   GitHub,
 } from "@mui/icons-material";
 import "./navbar.css";
+import { Context } from "../contexts/userContext/Context";
 
 function Navbar() {
+  const { user, dispatch } = useContext(Context);
+
   const [nav, setNav] = useState(false);
   const handleClick = () => {
     setNav(!nav);
   };
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
+
   return (
     <div className="navbar">
       <div className="nav-logo">
@@ -71,9 +79,15 @@ function Navbar() {
         </ul>
         <div className="mobile-menu-bottom">
           <div className="mobile-btn">
-            <Link to="/login" className="link">
-              <button>Login</button>
-            </Link>
+            {user ? (
+              <Link to="/" className="link">
+                <button onClick={handleLogout}>Log out</button>
+              </Link>
+            ) : (
+              <Link to="/login" className="link">
+                <button>Log in</button>
+              </Link>
+            )}
 
             <Link to="/register" className="link">
               <button>Register</button>
