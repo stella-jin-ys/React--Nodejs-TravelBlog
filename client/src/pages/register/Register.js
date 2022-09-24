@@ -34,54 +34,60 @@ export default function Register() {
     setLoading(false);
   };
   return (
-    <div>
-      <Hamburger />
-      <form className="container">
-        <h2>Register here</h2>
+    <>
+      {loading ? (
+        "Loading"
+      ) : (
+        <div>
+          <Hamburger />
+          <form className="container">
+            <h2>Register here</h2>
 
-        <div className="name">
-          <label htmlFor="username">User name</label>
-          <input
-            required
-            type="text"
-            ref={usernameInput}
-            placeholder="Enter username"
-          />
+            <div className="name">
+              <label htmlFor="username">User name</label>
+              <input
+                required
+                type="text"
+                ref={usernameInput}
+                placeholder="Enter username"
+              />
+            </div>
+
+            <div className="email">
+              <label htmlFor="email">Email</label>
+              <input
+                required
+                type="email"
+                ref={emailInput}
+                placeholder="Enter email"
+              />
+            </div>
+
+            <div className="password">
+              <label htmlFor="password">Enter Password</label>
+              <input
+                required
+                type="text"
+                ref={passwordInput}
+                placeholder="Enter password"
+              />
+            </div>
+
+            <button className="regBtn" type="submit" onClick={handleRegister}>
+              Register
+            </button>
+            {error && (
+              <span style={{ color: "red", marginTop: "10px" }}>
+                Username or email already registered!
+              </span>
+            )}
+
+            <Link to="/login" name="login">
+              <button className="btn">Login</button>
+            </Link>
+          </form>
         </div>
-
-        <div className="email">
-          <label htmlFor="email">Email</label>
-          <input
-            required
-            type="email"
-            ref={emailInput}
-            placeholder="Enter email"
-          />
-        </div>
-
-        <div className="password">
-          <label htmlFor="password">Enter Password</label>
-          <input
-            required
-            type="text"
-            ref={passwordInput}
-            placeholder="Enter password"
-          />
-        </div>
-
-        <button className="regBtn" type="submit" onClick={handleRegister}>
-          Register
-        </button>
-        {error && (
-          <span style={{ color: "red", marginTop: "10px" }}>
-            Username or email already registered!
-          </span>
-        )}
-
-        <Link to="/login" name="login">
-          <button className="btn">Login</button>
-        </Link>
-      </form>
-    </div>
+      )}
+    </>
   );
 }
