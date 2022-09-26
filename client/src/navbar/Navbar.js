@@ -40,13 +40,18 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <Link to="/destinations" className="link">
-            Destinations
+          <Link to="/blogs" className="link">
+            Blogs
           </Link>
         </li>
         <li>
-          <Link to="/blogs" className="link">
-            Blogs
+          <Link to="/blogs/newpost" className="link">
+            Write Blog
+          </Link>
+        </li>
+        <li>
+          <Link to="/login" className="link">
+            Login/ Register
           </Link>
         </li>
       </ul>
@@ -62,18 +67,17 @@ function Navbar() {
         <ul className="mobile-menu">
           <li>
             <Link to="/" className="link">
-              {" "}
               Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/destinations" className="link">
-              Destinations
             </Link>
           </li>
           <li>
             <Link to="/blogs" className="link">
               Blogs
+            </Link>
+          </li>
+          <li>
+            <Link to="/blogs/newpost" className="link">
+              Write Blog
             </Link>
           </li>
         </ul>

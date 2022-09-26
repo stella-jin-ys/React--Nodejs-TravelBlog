@@ -19,7 +19,6 @@ function Homepage() {
       <div className="destinations">
         <div className="desti-header">
           <h2>Destinations</h2>
-          <h4>Luxury vacation or backpack trip </h4>
         </div>
         <div className="img-container">
           {destinations.map((destination) => {

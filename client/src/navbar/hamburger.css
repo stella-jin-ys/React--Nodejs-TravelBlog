@@ -1,50 +1,53 @@
-
-.hamburger{
-    display: block;
-    cursor: pointer;
-    float: right;
-    padding: 10px;
+.hamburger {
+  display: block;
+  cursor: pointer;
+  float: right;
+  padding: 10px;
 }
-.mobile-nav{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: -100vh; 
-    left: 0;
-    justify-content: space-between; 
-    background-color: whitesmoke;
-    color: black;
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+  justify-content: center;
+  background-color: whitesmoke;
+  color: black;
+  text-align: center;
 }
-.active{
-    top:100px;
+.active {
+  top: 100px;
 }
-.mobile-menu li{
-    list-style: none;
-    padding: 1rem ;
-    margin: 1rem 0;
-    border-bottom: 1px solid rgb(191, 184, 184);
+.mobile-menu li {
+  list-style: none;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid rgb(191, 184, 184);
 }
-.mobile-menu-bottom{
-    text-align: center;
-    margin: 2rem 0;
+.mobile-menu-bottom {
+  text-align: center;
+  margin: 2rem 0;
 }
-.mobile-icon{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-around;
-    color: rgb(112, 108, 107);
+.mobile-icon {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  color: rgb(112, 108, 107);
 }
-.icon:hover{
-    transform: scale(1.5);
-    transition: 0.3s;
+.icon:hover {
+  transform: scale(1.5);
+  transition: 0.3s;
 }
-.mobile-btn button{
-    width: 80%;
-    padding: 1rem 0;
-    margin: .5rem 0;
-    background-color: rgb(87, 200, 192);
-    border-radius: 10px;
-    color: white;
-    border-style: none
-};    
+.mobile-btn button {
+  width: 80%;
+  padding: 1rem 0;
+  margin: 0.5rem 0;
+  background-color: rgb(87, 200, 192);
+  border-radius: 10px;
+  color: white;
+  border-style: none;
+}
