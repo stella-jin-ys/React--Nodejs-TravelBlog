@@ -35,11 +35,11 @@ export default function SinglePost() {
               <img src={post.image} alt="" />
               <h3>{post.title}</h3>
             </div>
-            <div className="post-icon">
+            <div className="single-icon">
               <RateReview />
-              <DeleteOutline />
+              <DeleteOutline className="single-delete" />
             </div>
-            <div>
+            <div className="single-desc">
               <p>{post.desc}</p>
             </div>
           </div>
