@@ -1,10 +1,9 @@
-
-.post-btn{
-    margin-left: 40px;
-    width: 100px;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color:white;
-    border-style: none;
-    background-color:  rgba(235, 129, 113, 0.783);
+.post-btn {
+  margin-left: 40px;
+  width: 100px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  border-style: none;
+  background-color: rgba(235, 129, 113, 0.783);
 }

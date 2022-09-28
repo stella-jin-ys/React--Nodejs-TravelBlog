@@ -30,13 +30,13 @@ function Hamburger() {
             </Link>
           </li>
           <li>
-            <Link to="/blogs/newpost" className="link">
-              Write Blog
+            <Link to="/blogs" className="link">
+              Blogs
             </Link>
           </li>
           <li>
-            <Link to="/blogs" className="link">
-              Blogs
+            <Link to="/blogs/newpost" className="link">
+              Write Blog
             </Link>
           </li>
         </ul>

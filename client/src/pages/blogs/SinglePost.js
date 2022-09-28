@@ -1,50 +1,50 @@
-import React from "react";
 import "./singlePost.css";
-import { RateReview, DeleteOutline } from "@mui/icons-material";
+import { DeleteOutline, AppRegistrationOutlined } from "@mui/icons-material";
 import Hamburger from "../../navbar/Hamburger";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
 
 export default function SinglePost() {
-  const [loading, setLoading] = useState(false);
   const [post, setPost] = useState({});
   const { id } = useParams();
-  console.log(id);
   useEffect(() => {
-    setLoading(true);
-    fetch(
-      `https://travel-blog-a7715-default-rtdb.europe-west1.firebasedatabase.app/posts/${id}.json`
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setLoading(false);
-        setPost(data);
-      });
+    const fetchPost = async () => {
+      const res = await axios.get("http://localhost:8000/api/posts/" + id);
+      console.log(res.data);
+      setPost(res.data);
+    };
+    fetchPost();
   }, [id]);
+
+  // const handleEdit = () => {};
+
+  // const handleDelete = async () => {};
+
   return (
     <>
-      {loading ? (
-        "Loading"
-      ) : (
-        <div>
-          <Hamburger />
-          <div className="singlePost">
-            <div className="single-top">
-              <img src={post.image} alt="" />
-              <h3>{post.title}</h3>
-            </div>
+      <div>
+        <Hamburger />
+        <div className="singlePost">
+          <div className="single-top">
+            {post.photo && <img src={post?.photo} alt="" />}
+            <h3>{post?.title}</h3>
+          </div>
+          <div className="single-content">
             <div className="single-icon">
-              <RateReview />
-              <DeleteOutline className="single-delete" />
+              <AppRegistrationOutlined />
+              <DeleteOutline className="deleteBtn" />
+            </div>
+            <div className="single-date">
+              {new Date(post.createdAt).toDateString()}
             </div>
             <div className="single-desc">
-              <p>{post.desc}</p>
+              <p>{post?.desc}</p>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }

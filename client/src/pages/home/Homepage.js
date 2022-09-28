@@ -40,7 +40,7 @@ function Homepage() {
             <PostList
               id={post.id}
               key={post.id}
-              image={post.image}
+              image={post.photo}
               title={post.title}
               desc={post.desc}
             />

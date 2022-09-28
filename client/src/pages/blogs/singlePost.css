@@ -14,18 +14,22 @@
 }
 .single-top h3 {
   color: rgb(231, 148, 148);
-  padding: 5px;
-  margin: 10px;
-  text-align: center;
+  padding: 20px;
 }
-.single-desc {
-  text-align: center;
-  max-width: 700px;
+.single-content {
   margin-top: 20px;
+  max-width: 700px;
+  position: relative;
 }
 .single-icon {
-  background-color: blanchedalmond;
-  display: block;
-  margin-left: auto;
-  margin-right: 20vw;
+  position: absolute;
+  top: -30px;
+  right: 0;
+}
+.single-date {
+  color: rgb(124, 124, 124);
+  float: left;
+}
+.single-desc {
+  margin-top: 60px;
 }

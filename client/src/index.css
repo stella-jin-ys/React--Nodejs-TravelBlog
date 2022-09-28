@@ -1,21 +1,24 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-body{
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-ul{
-    list-style-type: none;
+ul {
+  list-style-type: none;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-button{
-    cursor: pointer;
+button {
+  cursor: pointer;
 }
-.link{
-    text-decoration: none;
-    color: inherit;
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+.deleteBtn {
+  color: red;
 }

@@ -1,29 +1,19 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import React, { createContext, useState, useEffect, useContext } from "react";
+import axios from "axios";
 
 const PostsContext = createContext();
-export function PostsProvider({children}) {
+export function PostsProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [posts, setPosts] = useState([]);
-  
+
   useEffect(() => {
-       fetch("https://travel-blog-a7715-default-rtdb.europe-west1.firebasedatabase.app/posts.json")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        //  console.log(Object.entries(data));
-        const postList = [];
-        for (const key in data) {
-          const post = {
-            id: key,
-            ...data[key]
-          };
-          postList.push(post);
-        };
-      
-        setLoading(false);
-        setPosts(postList);
-      });
+    setLoading(true);
+    const fetchPosts = async () => {
+      const res = await axios.get("http://localhost:8000/api/posts");
+      setPosts(res.data);
+    };
+    fetchPosts();
+    setLoading(false);
   }, []);
 
   if (loading) {
@@ -35,14 +25,18 @@ export function PostsProvider({children}) {
   }
 
   return (
-  <PostsContext.Provider value={{
-    posts,
-    loading}}>
+    <PostsContext.Provider
+      value={{
+        posts,
+        loading,
+      }}
+    >
       {children}
-  </PostsContext.Provider>)
- };
+    </PostsContext.Provider>
+  );
+}
 
-export function PostsApi(){
-    const context = useContext(PostsContext)
-    return context
+export function PostsApi() {
+  const context = useContext(PostsContext);
+  return context;
 }

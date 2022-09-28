@@ -24,8 +24,8 @@ export default function Blogs() {
         {posts.map((post) => (
           <PostList
             key={post.id}
-            id={post.id}
-            image={post.image}
+            id={post._id}
+            image={post.photo}
             title={post.title}
             desc={post.desc}
           />
